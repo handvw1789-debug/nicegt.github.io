@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LcBuild - Construcción en Ica, Perú</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --orange: #F97316;
+            --orange-dark: #ea580c;
             --dark-gray: #1F2937;
             --white: #FFFFFF;
             --light-gray: #F3F4F6;
+            --text-muted: #6b7280;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -40,7 +47,7 @@
             display: block;
         }
 
-        /* Header */
+        /* ── HEADER ── */
         header {
             background-color: var(--dark-gray);
             color: var(--white);
@@ -48,13 +55,16 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -64,6 +74,7 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--orange);
+            letter-spacing: 1px;
         }
 
         nav ul {
@@ -73,6 +84,7 @@
 
         nav a {
             font-weight: 500;
+            color: var(--white);
             transition: color 0.3s;
         }
 
@@ -80,87 +92,120 @@
             color: var(--orange);
         }
 
-        /* Hero Section */
+        /* ── HERO ── */
         #inicio {
-            background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8)),
-                        url('https://images.unsplash.com/photo-1581091883573-6531e66c4669?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(31, 41, 55, 0.82), rgba(31, 41, 55, 0.82)),
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
             text-align: center;
-            padding: 8rem 0 6rem;
+            padding: 9rem 0 7rem;
+        }
+
+        #inicio .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #inicio h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
         }
 
-        #inicio p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+        #inicio h1 span {
+            color: var(--orange);
+        }
+
+        #inicio .subtitulo {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
             opacity: 0.9;
+        }
+
+        #inicio .ubicacion {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2.5rem;
+        }
+
+        #inicio .ubicacion i {
+            color: var(--orange);
+            margin-right: 5px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--orange);
             color: var(--white);
-            padding: 0.75rem 2rem;
+            padding: 0.85rem 2.25rem;
             border-radius: 5px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1rem;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #ea580c;
+            background-color: var(--orange-dark);
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
         }
 
-        /* Services Section */
-        #servicios {
-            padding: 6rem 0;
-            background-color: var(--light-gray);
-        }
-
-        section h2 {
+        /* ── SECTION TITLE ── */
+        .section-title {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
             color: var(--dark-gray);
-            position: relative;
         }
 
-        section h2::after {
+        .section-title::after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
             background-color: var(--orange);
-            margin: 0.5rem auto 0;
+            margin: 0.6rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        /* ── SERVICIOS ── */
+        #servicios {
+            padding: 6rem 0;
+            background-color: var(--light-gray);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
         .service-image {
@@ -170,25 +215,123 @@
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
 
         .service-content {
-            padding: 1.5rem;
+            padding: 1.75rem;
         }
 
         .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
             color: var(--dark-gray);
         }
 
         .service-content p {
-            color: #6b7280;
-            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.7;
         }
 
-        /* Contact Section */
+        /* ── NOSOTROS ── */
+        #nosotros {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .nosotros-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .nosotros-texto p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .nosotros-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 1.75rem;
+            text-align: center;
+            border-left: 4px solid var(--orange);
+        }
+
+        .stat-card .numero {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            line-height: 1;
+        }
+
+        .stat-card .etiqueta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        /* ── GALERÍA ── */
+        #galeria {
+            padding: 6rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(249, 115, 22, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ── CONTACTO ── */
         #contacto {
             padding: 6rem 0;
             background-color: var(--white);
@@ -196,97 +339,178 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1.4fr;
             gap: 3rem;
+            margin-top: 3rem;
+            align-items: start;
         }
 
-        .contact-info h3,
-        .contact-form h3 {
-            font-size: 1.8rem;
+        .contact-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--dark-gray);
         }
 
-        .contact-info p {
-            margin-bottom: 1rem;
+        .contact-item {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #4b5563;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .contact-info i {
+        .contact-item i {
             color: var(--orange);
-            width: 20px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+            width: 22px;
+            flex-shrink: 0;
         }
 
-        .contact-form {
+        .contact-item-text strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-item-text span {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background-color: #25D366;
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5b;
+            transform: translateY(-2px);
+        }
+
+        .contact-form-box {
             background: var(--light-gray);
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.25rem;
+            border-radius: 12px;
+        }
+
+        .contact-form-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
+            font-size: 0.9rem;
             color: var(--dark-gray);
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 5px;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #d1d5db;
+            border-radius: 6px;
             font-family: inherit;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            background: var(--white);
+            color: var(--dark-gray);
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--orange);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
         }
 
         .form-group textarea {
-            min-height: 150px;
+            min-height: 130px;
             resize: vertical;
         }
 
-        /* Footer */
+        .form-success {
+            display: none;
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* ── FOOTER ── */
         footer {
             background-color: var(--dark-gray);
             color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 0.9rem;
+            padding: 2.5rem 0;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                gap: 1.5rem;
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer .footer-logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--orange);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        footer .footer-links a {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            opacity: 1;
+            color: var(--orange);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .nosotros-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            #inicio h1 {
-                font-size: 2.2rem;
-            }
-
-            #inicio p {
-                font-size: 1.1rem;
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .contact-container {
@@ -294,117 +518,297 @@
             }
         }
 
-        @media (max-width: 480px) {
-            #inicio {
-                padding: 6rem 0 4rem;
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
 
             #inicio h1 {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
 
-            section h2 {
+            .section-title {
                 font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #inicio {
+                padding: 7rem 0 5rem;
+            }
+
+            #inicio h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nosotros-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- ── HEADER ── -->
     <header>
         <div class="container">
-            <div class="logo">LcBuild</div>
+            <div class="logo">Lc<span style="color:#fff">Build</span></div>
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#galeria">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section (Inicio) -->
+    <!-- ── HERO ── -->
     <section id="inicio">
         <div class="container">
-            <h1>LcBuild</h1>
-            <p>Construcción, remodelación y pintura de calidad en Ica, Perú</p>
-            <a href="#contacto" class="btn">Solicita tu cotización</a>
+            <h1>Lc<span>Build</span></h1>
+            <p class="subtitulo">Construcción · Remodelación · Pintura</p>
+            <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> Ica, Perú</p>
+            <a href="#contacto" class="btn">Solicita tu cotización gratis</a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ── SERVICIOS ── -->
     <section id="servicios">
         <div class="container">
-            <h2>Nuestros Servicios</h2>
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Soluciones completas para tu proyecto de construcción</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">🏗️</div>
                     <div class="service-content">
                         <h3>Construcción</h3>
-                        <p>Edificios residenciales, comerciales e industriales desde la fundación hasta los acabados finales.</p>
+                        <p>Edificaciones residenciales, comerciales e industriales desde la cimentación hasta los acabados finales, con materiales de primera calidad.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-image">🔨</div>
                     <div class="service-content">
                         <h3>Remodelación</h3>
-                        <p>Transformamos espacios existentes con diseños modernos y funcionales.</p>
+                        <p>Transformamos tu espacio con diseños modernos y funcionales. Ampliaciones, refacciones y mejoras para darle nueva vida a tu propiedad.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-image">🎨</div>
                     <div class="service-content">
                         <h3>Pintura</h3>
-                        <p>Acabados profesionales en interiores y exteriores con materiales de alta calidad.</p>
+                        <p>Acabados profesionales en interiores y exteriores. Trabajamos con las mejores marcas del mercado para garantizar durabilidad y calidad.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ── NOSOTROS ── -->
+    <section id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p class="section-subtitle">Compromiso, calidad y experiencia en cada obra</p>
+            <div class="nosotros-grid">
+                <div class="nosotros-texto">
+                    <p>Somos <strong>LcBuild</strong>, una empresa de construcción con sede en Ica, Perú, dedicada a hacer realidad los proyectos de nuestros clientes con la más alta calidad y profesionalismo.</p>
+                    <p>Nos especializamos en construcción, remodelación y pintura de espacios residenciales y comerciales. Cada proyecto lo tratamos con el mismo compromiso: entregar un trabajo impecable, en el plazo acordado y dentro del presupuesto.</p>
+                    <p>Nuestro equipo de profesionales cuenta con amplia experiencia en el sector, utilizando técnicas modernas y materiales certificados para garantizar resultados que superen las expectativas.</p>
+                    <a href="#contacto" class="btn" style="margin-top: 0.5rem;">Habla con nosotros</a>
+                </div>
+                <div class="nosotros-stats">
+                    <div class="stat-card">
+                        <div class="numero">+50</div>
+                        <div class="etiqueta">Proyectos completados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="numero">+5</div>
+                        <div class="etiqueta">Años de experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="numero">100%</div>
+                        <div class="etiqueta">Clientes satisfechos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="numero">3</div>
+                        <div class="etiqueta">Servicios especializados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GALERÍA ── -->
+    <section id="galeria">
+        <div class="container">
+            <h2 class="section-title">Nuestros Trabajos</h2>
+            <p class="section-subtitle">Una muestra de proyectos realizados en Ica y alrededores</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Construcción residencial">
+                    <div class="gallery-overlay"><i class="fas fa-hard-hat" style="margin-right:8px"></i> Construcción</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Remodelación interior">
+                    <div class="gallery-overlay"><i class="fas fa-tools" style="margin-right:8px"></i> Remodelación</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?auto=format&fit=crop&w=600&q=80" alt="Pintura exterior">
+                    <div class="gallery-overlay"><i class="fas fa-paint-roller" style="margin-right:8px"></i> Pintura</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="Acabados interiores">
+                    <div class="gallery-overlay"><i class="fas fa-home" style="margin-right:8px"></i> Acabados</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=600&q=80" alt="Obra comercial">
+                    <div class="gallery-overlay"><i class="fas fa-building" style="margin-right:8px"></i> Comercial</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" alt="Diseño moderno">
+                    <div class="gallery-overlay"><i class="fas fa-ruler-combined" style="margin-right:8px"></i> Diseño</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACTO ── -->
     <section id="contacto">
         <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">Cuéntanos tu proyecto y te damos una cotización sin costo</p>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Contáctanos</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Ica, Perú</p>
-                    <p><i class="fas fa-phone"></i> +51 987 654 321</p>
-                    <p><i class="fas fa-envelope"></i> info@lcbuild.pe</p>
-                    <p><i class="fas fa-clock"></i> Lunes - Viernes: 8:00 - 18:00</p>
+                    <h3>Información de contacto</h3>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-text">
+                            <strong>Ubicación</strong>
+                            <span>Ica, Perú</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-item-text">
+                            <strong>Teléfonos</strong>
+                            <span>+51 984 354 403</span><br>
+                            <span>+51 942 647 633</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-text">
+                            <strong>Correo electrónico</strong>
+                            <span>cruzleyluiver@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-item-text">
+                            <strong>Horario de atención</strong>
+                            <span>Lunes - Sábado: 8:00 - 18:00</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/51984354403?text=Hola%20LcBuild,%20me%20gustar%C3%ADa%20una%20cotizaci%C3%B3n" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp" style="font-size:1.3rem"></i> Escríbenos por WhatsApp
+                    </a>
                 </div>
-                <div class="contact-form">
+
+                <div class="contact-form-box">
                     <h3>Envíanos un mensaje</h3>
-                    <form>
+                    <form action="https://formspree.io/f/mjgdoaqp" method="POST" id="contactForm">
                         <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" required>
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999" required>
                         </div>
                         <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            <label for="servicio">Servicio de interés</label>
+                            <select id="servicio" name="servicio">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="construccion">Construcción</option>
+                                <option value="remodelacion">Remodelación</option>
+                                <option value="pintura">Pintura</option>
+                                <option value="otro">Otro</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+                        <div class="form-group">
+                            <label for="mensaje">Cuéntanos tu proyecto</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente tu proyecto o consulta..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%; font-size:1.05rem;">
+                            <i class="fas fa-paper-plane" style="margin-right:8px"></i>Enviar mensaje
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            ✅ ¡Mensaje enviado! Te contactaremos pronto.
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ── FOOTER ── -->
     <footer>
         <div class="container">
+            <div class="footer-logo">LcBuild</div>
             <p>&copy; 2026 LcBuild. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccess');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                form.reset();
+                success.style.display = 'block';
+                setTimeout(() => success.style.display = 'none', 5000);
+            }
+        });
+    </script>
+
 </body>
 </html>
