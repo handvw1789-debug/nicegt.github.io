@@ -581,14 +581,17 @@
             html { scroll-behavior: auto; }
             *, *::before, *::after { transition: none !important; }
         }
-    </style>
+    .gallery-overlay {inset:auto 0 0;opacity:1;background:rgba(31,41,55,.88);padding:.7rem;text-align:center;font-size:.95rem;}
+.service-image{height:260px;overflow:hidden;background:#e5e7eb}.service-image img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4275156571308629" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <!-- ── HEADER ── -->
     <header>
         <div class="container">
-            <div class="logo">Lc<span style="color:#fff">Build</span></div>
+            <div class="logo" aria-label="LcBuild">LB</div>
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
@@ -604,7 +607,7 @@
     <!-- ── HERO ── -->
     <section id="inicio">
         <div class="container">
-            <h1>Lc<span>Build</span></h1>
+            <h1><span>L</span>c<span>B</span>uild</h1>
             <p class="subtitulo">Construcción · Remodelación · Pintura</p>
             <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> Ica, Perú</p>
             <a href="https://wa.me/51942647633?text=Hola%20LcBuild%2C%20quisiera%20cotizar%20un%20trabajo." class="btn" target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a><a href="#contacto" style="margin-top:1rem;text-decoration:underline;">Enviar solicitud por correo</a>
@@ -618,21 +621,21 @@
             <p class="section-subtitle">Soluciones completas para tu proyecto de construcción</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-image">🏗️</div>
+                    <div class="service-image"><img src="imagenes/servicio-construccion.png" alt="Albañilería y construcción de muros de ladrillo" loading="lazy" decoding="async"></div>
                     <div class="service-content">
                         <h3>Construcción</h3>
                         <p>Edificaciones residenciales, comerciales e industriales desde la cimentación hasta los acabados finales, con materiales de primera calidad.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image">🔨</div>
+                    <div class="service-image"><img src="imagenes/servicio-remodelacion.png" alt="Remodelación de interiores e instalación de pisos" loading="lazy" decoding="async"></div>
                     <div class="service-content">
                         <h3>Remodelación</h3>
                         <p>Transformamos tu espacio con diseños modernos y funcionales. Ampliaciones, refacciones y mejoras para darle nueva vida a tu propiedad.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-image">🎨</div>
+                    <div class="service-image"><img src="imagenes/servicio-pintura.png" alt="Pintura de paredes con rodillo" loading="lazy" decoding="async"></div>
                     <div class="service-content">
                         <h3>Pintura</h3>
                         <p>Acabados profesionales en interiores y exteriores. Trabajamos con las mejores marcas del mercado para garantizar durabilidad y calidad.</p>
@@ -677,38 +680,7 @@
     </section>
 
     <!-- ── GALERÍA ── -->
-    <section id="galeria">
-        <div class="container">
-            <h2 class="section-title">Nuestros Trabajos</h2>
-            <p class="section-subtitle">Una muestra de proyectos realizados en Ica y alrededores</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Construcción residencial">
-                    <div class="gallery-overlay"><i class="fas fa-hard-hat" style="margin-right:8px"></i> Construcción</div>
-                </div>
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Remodelación interior">
-                    <div class="gallery-overlay"><i class="fas fa-tools" style="margin-right:8px"></i> Remodelación</div>
-                </div>
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?auto=format&fit=crop&w=600&q=80" alt="Pintura exterior">
-                    <div class="gallery-overlay"><i class="fas fa-paint-roller" style="margin-right:8px"></i> Pintura</div>
-                </div>
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="Acabados interiores">
-                    <div class="gallery-overlay"><i class="fas fa-home" style="margin-right:8px"></i> Acabados</div>
-                </div>
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=600&q=80" alt="Obra comercial">
-                    <div class="gallery-overlay"><i class="fas fa-building" style="margin-right:8px"></i> Comercial</div>
-                </div>
-                <div class="gallery-item">
-                    <img loading="lazy" decoding="async" width="600" height="450" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" alt="Diseño moderno">
-                    <div class="gallery-overlay"><i class="fas fa-ruler-combined" style="margin-right:8px"></i> Diseño</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="galeria"><div class="container"><h2 class="section-title">Nuestros trabajos</h2><p class="section-subtitle">Imágenes ilustrativas de trabajos de albañilería, tarrajeo y reparación.</p><div class="gallery-grid"><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/tarrajeo-interior.png" alt="Imagen ilustrativa: tarrajeo de interiores"><div class="gallery-overlay">Tarrajeo de interiores</div></div><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/albanileria-vivienda.png" alt="Imagen ilustrativa: albañilería de viviendas"><div class="gallery-overlay">Albañilería de viviendas</div></div><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/muros-ladrillo.png" alt="Imagen ilustrativa: construcción de muros"><div class="gallery-overlay">Construcción de muros</div></div><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/reparacion-muros.png" alt="Imagen ilustrativa: reparación de muros"><div class="gallery-overlay">Reparación de muros</div></div><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/acabados-paredes.png" alt="Imagen ilustrativa: acabados en paredes"><div class="gallery-overlay">Acabados en paredes</div></div><div class="gallery-item"><img loading="lazy" decoding="async" src="imagenes/tarrajeo-obra.png" alt="Imagen ilustrativa: tarrajeo en obra"><div class="gallery-overlay">Tarrajeo en obra</div></div></div></div></section>
 
     <!-- ── CONTACTO ── -->
     <section id="contacto">
@@ -786,14 +758,6 @@
                             <input id="ubicacion" name="ubicacion" placeholder="Ej. Ica, La Tinguiña" autocomplete="address-level2" maxlength="180" required>
                         </div>
                         <div class="form-group">
-                            <label for="medidas">Medidas aproximadas (opcional)</label>
-                            <input id="medidas" name="medidas" placeholder="Ej. pared de 4 m de largo × 2.5 m de alto" maxlength="150">
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha">Fecha preferida de inicio (opcional)</label>
-                            <input type="date" id="fecha" name="fecha_preferida">
-                        </div>
-                        <div class="form-group">
                             <label for="mensaje">Cuéntanos tu proyecto</label>
                             <textarea id="mensaje" name="mensaje" placeholder="Describe el trabajo, el estado actual del espacio y si necesitas materiales o solo mano de obra..." minlength="10" maxlength="3000" required></textarea>
                         </div>
@@ -802,7 +766,7 @@
                             <i class="fas fa-paper-plane" style="margin-right:8px"></i>Enviar solicitud por correo
                         </button>
                         <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-                            Solicitud enviada. Coordinaremos contigo la evaluación del proyecto; la fecha y el presupuesto están pendientes de confirmación.
+                            Solicitud enviada. Coordinaremos contigo la evaluación del proyecto y el presupuesto.
                         </div>
                         <p id="formError" class="form-error" role="alert" hidden></p>
                     </form>
